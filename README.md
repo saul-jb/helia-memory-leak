@@ -44,6 +44,42 @@ memory usage (after waiting): {
 }
 ```
 
+
+
+### Import Without Helia
+
+This test generates a 1GB file and imports it into a FS backed blockstore. This test is to show that the increased memory allocation is a problem in Helia's networked blockstore and not the importer.
+
+```
+node dist/src/import-no-helia.js
+```
+
+#### Results
+
+```
+memory usage (baseline): {
+  rss: 99057664,
+  heapTotal: 19021824,
+  heapUsed: 9012184,
+  external: 9408555,
+  arrayBuffers: 8778019
+}
+memory usage (after import): {
+  rss: 136679424,
+  heapTotal: 28983296,
+  heapUsed: 11684536,
+  external: 6581270,
+  arrayBuffers: 5949572
+}
+memory usage (after waiting): {
+  rss: 126705664,
+  heapTotal: 10633216,
+  heapUsed: 8363992,
+  external: 658101,
+  arrayBuffers: 26403
+}
+```
+
 ### Transfer
 
 This test generates a 1GB file and imports it into Helia with FS backed blockstore and datastore and then pins it from another helia instance. The expectation is for memory usage to remain low (< 1GB) but the observation is that memory usage does not grow unlike the first test until it is transfered to the other Helia isntance and then grows above 1GB and does not seem to be garabge collected.
