@@ -29,7 +29,7 @@ const filePath = Path.join(testDir, 'file.data')
 
 await createFile(filePath, 10 ** 9)
 
-const helia = { blockstore: new FsBlockstore(Path.join(testDir, 'helia-blockstore')) }
+const helia = { blockstore: new FsBlockstore(Path.join(testDir, 'raw-blockstore')) }
 
 const ufs = unixfs(helia)
 
