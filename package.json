@@ -1,0 +1,34 @@
+{
+  "name": "helia-memory-leak",
+  "version": "1.0.0",
+  "description": "A simple project to display the growing memory allocation inside of Helia.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "clean": "aegir clean",
+    "lint": "aegir lint",
+    "dep-check": "aegir dep-check",
+    "prepublishOnly": "npm run build",
+    "build": "aegir build"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@chainsafe/libp2p-gossipsub": "^13.0.0",
+    "@chainsafe/libp2p-noise": "^15.0.0",
+    "@chainsafe/libp2p-yamux": "^6.0.2",
+    "@helia/unixfs": "^3.0.3",
+    "@libp2p/identify": "^1.0.17",
+    "@libp2p/tcp": "^9.0.18",
+    "blockstore-fs": "^1.1.10",
+    "datastore-fs": "^9.1.8",
+    "helia": "^4.1.0",
+    "ipfs-unixfs-importer": "^15.2.5",
+    "it-all": "^3.0.4",
+    "libp2p": "^1.3.2"
+  },
+  "devDependencies": {
+    "aegir": "^42.2.5"
+  },
+  "private": true
+}

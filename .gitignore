@@ -1,0 +1,7 @@
+test-out
+build
+dist
+.docs
+.coverage
+node_modules
+yarn.lock
